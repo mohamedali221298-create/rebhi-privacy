@@ -21,7 +21,7 @@
 
 <section id="en" lang="en" dir="ltr" style="border-top:0;margin-top:0">
 <h1>Rebhi Captain – Privacy Policy</h1>
-<p class="muted">Last updated: 17 November 2026 · Applies to the Rebhi Captain (ربحي كابتن) mobile app, package <code>com.rebhi.captain</code>.</p>
+<p class="muted">Last updated: 18 November 2026 · Applies to the Rebhi Captain (ربحي كابتن) mobile app, package <code>com.rebhi.captain</code>.</p>
 
 <p>Rebhi Captain helps ride-hailing and delivery drivers see, at a glance, how much a trip request is really worth after fuel, upkeep and the platform's commission. This page says what the app touches and what it does with it. The short version: <strong>what Rebhi Captain reads from your screen stays on your phone.</strong> The Android app is free and paid for by ads: its own screens show a Google ad banner, and it sends anonymous usage counts. Both are described below.</p>
 
@@ -38,7 +38,7 @@
   <li>Your settings (vehicle type, fuel use, fuel price, maintenance cost, hourly target, commissions) are stored in the app's private storage on your phone.</li>
   <li>A small daily tally (how many requests were rated green, yellow or red, and their average hourly net) is kept on your phone for the "Rated requests" box, for today and the last 7 days. Older days are deleted automatically. Beside it is a count of today's requests that could not be read. They hold numbers only: no addresses, names or fares.</li>
   <li>Your average driving speed, learned from requests that show both a distance and a time, is kept on your phone as one number and a count, and is used only to estimate the time of requests that show none. Typing your own speed in Costs clears it.</li>
-  <li>The net profit per hour of your latest 200 requests (numbers only, rides and deliveries apart, with nothing about where they came from) is kept on your phone to learn your hourly target, so green means better than most of the requests you get. Typing your own target in Costs stops this.</li>
+  <li>The net profit per hour of your latest 200 requests (numbers only, rides and deliveries apart, with nothing about where they came from) is kept on your phone to learn your hourly target, so green means better than most of the requests you get. Typing your own target in Costs stops this. The hour of the week each of those requests came in is kept with it, to show your best hours.</li>
   <li>The text read from a trip request is processed in memory and discarded after the card is shown. It is not stored, unless you switch on the optional Diagnostics log described below.</li>
 </ul>
 
@@ -46,8 +46,9 @@
 <p>The text read from a request (fares, distances, addresses, names) is <strong>never sent anywhere</strong>, to us or to anyone else, and is never given to the advertising or analytics libraries. We do not sell personal data. Rebhi Captain has no account and no sign-up, and we run no servers of our own. The Android app does use two Google services:</p>
 <ul>
   <li><strong>Ads (Google AdMob).</strong> A banner is shown on Rebhi Captain's own screens only: never on the verdict card and never over a driver app. To show and measure ads, Google's ads library collects the device's advertising ID, the IP address (from which an approximate location such as the city is worked out), device and app information (model, Android version, language) and how the ad is viewed or tapped. Depending on your settings Google may use these to show personalised ads; see <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from apps that use its services</a>. In the European Economic Area, the UK and Switzerland the app asks for your choice before any ad is requested, and you can change it later under Tools → Privacy → Ad privacy choices. Anywhere, you can reset or delete your advertising ID in Android settings (Privacy → Ads).</li>
-  <li><strong>Usage counts (Google Analytics for Firebase).</strong> So that we know how many drivers the app works for, and which driver app's request card has stopped being read, the app sends: that the app was opened or updated; that the trip reader was used on a given day; for each rated request, which supported driver app it came from and whether the verdict was green, yellow or red; and for a request that could not be read, which driver app it was in. An app you added yourself is reported only as "custom", never by name. These counts arrive with an app-instance identifier, the advertising ID, device and app information and the country worked out from the IP address. They never include the fare, distances, addresses, names or any other text from the screen. Nothing is sent before you agree on the first screen, and you can turn the counts off at any time under Tools → Privacy → "Send anonymous usage counts". Google deletes user-level analytics data automatically after at most 14 months.</li>
+  <li><strong>Usage counts (Google Analytics for Firebase).</strong> So that we know how many drivers the app works for, and which driver app's request card has stopped being read, the app sends: that the app was opened or updated; that the trip reader was used on a given day; for each rated request, which supported driver app it came from, that app's version number, whether the verdict was green, yellow or red, and which version of Rebhi's reading rules read it; and for a request that could not be read, the same without a colour. An app you added yourself is reported only as "custom", never by name. These counts arrive with an app-instance identifier, the advertising ID, device and app information and the country worked out from the IP address. They never include the fare, distances, addresses, names or any other text from the screen. Nothing is sent before you agree on the first screen, and you can turn the counts off at any time under Tools → Privacy → "Send anonymous usage counts". Google deletes user-level analytics data automatically after at most 14 months.</li>
 </ul>
+<p><strong>Reading-rule updates.</strong> A few times a day the Android app downloads a small file of reading rules from this website (GitHub Pages), so a change in a driver app's request screen can be fixed without a new version of the app. Only the file is downloaded; like any website, GitHub sees the request and its IP address. The same file can name the oldest version of the app that is still allowed, which the app then asks you to update.</p>
 <p>The iPhone app has no ads and no analytics, and does not use the network.</p>
 
 <h2>Optional diagnostics log</h2>
@@ -57,7 +58,8 @@
 <ul>
   <li><strong>Accessibility Service</strong> – to read the trip request on screen, as described above. You turn it on yourself in Android settings after an explanation inside the app, and you can turn it off at any time.</li>
   <li><strong>Display over other apps (accessibility overlay)</strong> – to show the verdict card above the driver app. Rebhi Captain uses the accessibility overlay window type, so no separate "draw over apps" grant is needed.</li>
-  <li><strong>Internet and network state</strong> – to load the ad banner and send the usage counts described above. Nothing the trip reader reads goes over the network.</li>
+  <li><strong>Internet and network state</strong> – to load the ad banner, send the usage counts and download the reading rules described above. Nothing the trip reader reads goes over the network.</li>
+  <li><strong>Vibration</strong> – only for the optional alert (Tools → Alerts) that tells a request's colour by vibration. The voice alert uses your phone's own text-to-speech engine.</li>
   <li><strong>Advertising ID</strong> – used by Google's ads and analytics libraries as described above.</li>
 </ul>
 
@@ -93,7 +95,7 @@
   <li>إعداداتك (نوع المركبة واستهلاك البنزين وسعره وتكلفة الصيانة وهدفك في الساعة والعمولات) بتتخزن في مساحة التطبيق الخاصة على موبايلك.</li>
   <li>عدّاد يومي صغير (كام طلب اتقيّم أخضر وأصفر وأحمر ومتوسط صافي الساعة) بيتخزن على موبايلك لخانة «الطلبات اللي اتقيّمت»، للنهارده وآخر ٧ أيام. الأيام الأقدم بتتمسح لوحدها. ومعاه عدّاد لطلبات النهارده اللي ماتقرتش. أرقام بس: من غير عناوين ولا أسماء ولا أجرة.</li>
   <li>متوسط سرعتك في السواقة، اللي بيتعلّمه التطبيق من الطلبات اللي فيها المسافة والوقت، بيتخزن على موبايلك كرقم واحد وعدّاد، وبيُستخدم بس لتقدير وقت الطلبات اللي مفيهاش وقت. لو كتبت سرعة بنفسك في «تكاليفي» بيتمسح.</li>
-  <li>صافي الساعة لآخر ٢٠٠ طلب جالك (أرقام بس، الرحلات لوحدها والتوصيل لوحده، ومن غير أي حاجة عن مكانها) بيتخزن على موبايلك عشان التطبيق يتعلّم هدفك في الساعة، فالأخضر يعني أحسن من أغلب الطلبات اللي بتجيلك. لو كتبت هدف بنفسك في «تكاليفي» التعلّم بيقف.</li>
+  <li>صافي الساعة لآخر ٢٠٠ طلب جالك (أرقام بس، الرحلات لوحدها والتوصيل لوحده، ومن غير أي حاجة عن مكانها) بيتخزن على موبايلك عشان التطبيق يتعلّم هدفك في الساعة، فالأخضر يعني أحسن من أغلب الطلبات اللي بتجيلك. لو كتبت هدف بنفسك في «تكاليفي» التعلّم بيقف. ومع كل رقم بتتخزن الساعة واليوم اللي الطلب جه فيهم، عشان يوريك أحسن أوقاتك.</li>
   <li>نص الطلب اللي بيتقرا بيتعالج في الذاكرة ويتمسح بعد عرض الكارت، ومبيتخزنش، إلا لو شغّلت سجل التشخيص الاختياري المذكور تحت.</li>
 </ul>
 
@@ -101,8 +103,9 @@
 <p>النص اللي بيتقرا من الطلب (الأجرة والمسافات والعناوين والأسماء) <strong>عمره ما بيتبعت لأي مكان</strong>، لا لينا ولا لأي حد، ومبيتسلّمش لمكتبات الإعلانات ولا التحليلات. إحنا مبنبيعش بيانات شخصية. ربحي كابتن مفيهوش حساب ولا تسجيل، ومعندناش سيرفرات خاصة بينا. لكن تطبيق الأندرويد بيستخدم خدمتين من جوجل:</p>
 <ul>
   <li><strong>الإعلانات (Google AdMob).</strong> البانر بيظهر في شاشات ربحي كابتن نفسها بس: مش على كارت الحكم ومش فوق تطبيق الكابتن. عشان الإعلان يتعرض ويتقاس، مكتبة إعلانات جوجل بتجمع معرّف الإعلانات بتاع الجهاز، وعنوان الـIP (ومنه بيتعرف المكان التقريبي زي المدينة)، ومعلومات عن الجهاز والتطبيق (الموديل وإصدار أندرويد واللغة)، وإزاي الإعلان اتشاف أو اتداس عليه. وحسب إعداداتك جوجل ممكن تستخدم ده في إعلانات مخصصة؛ شوف <a href="https://policies.google.com/technologies/partner-sites">إزاي جوجل بتستخدم المعلومات من التطبيقات اللي بتستخدم خدماتها</a>. في المنطقة الاقتصادية الأوروبية وبريطانيا وسويسرا التطبيق بيسألك عن اختيارك قبل ما يطلب أي إعلان، وتقدر تغيّره بعدين من «أدوات» ← «الخصوصية» ← «اختيارات خصوصية الإعلانات». وفي أي بلد تقدر تعيد ضبط معرّف الإعلانات أو تمسحه من إعدادات أندرويد (الخصوصية ← الإعلانات).</li>
-  <li><strong>أعداد الاستخدام (Google Analytics for Firebase).</strong> عشان نعرف التطبيق شغال عند كام كابتن، وأنهي تطبيق كباتن كارت الطلب بتاعه بطّل يتقري، التطبيق بيبعت: إنه اتفتح أو اتحدّث؛ إن قارئ الرحلات اتستخدم في يوم معيّن؛ ولكل طلب اتقيّم: جه من أنهي تطبيق كباتن مدعوم وهل الحكم أخضر ولا أصفر ولا أحمر؛ ولو طلب ماتقراش: كان في أنهي تطبيق. التطبيق اللي تضيفه بنفسك بيتسجّل «custom» بس، من غير اسمه. الأعداد دي بتوصل ومعاها معرّف لنسخة التطبيق، ومعرّف الإعلانات، ومعلومات عن الجهاز والتطبيق، والبلد اللي بيتعرف من عنوان الـIP. وعمرها ما فيها الأجرة ولا المسافات ولا العناوين ولا الأسماء ولا أي نص من الشاشة. مفيش حاجة بتتبعت قبل ما توافق في أول شاشة، وتقدر توقف الأعداد في أي وقت من «أدوات» ← «الخصوصية» ← «ابعت أعداد استخدام مجهولة». وجوجل بتمسح بيانات التحليلات المرتبطة بالمستخدم لوحدها بعد 14 شهر بالكتير.</li>
+  <li><strong>أعداد الاستخدام (Google Analytics for Firebase).</strong> عشان نعرف التطبيق شغال عند كام كابتن، وأنهي تطبيق كباتن كارت الطلب بتاعه بطّل يتقري، التطبيق بيبعت: إنه اتفتح أو اتحدّث؛ إن قارئ الرحلات اتستخدم في يوم معيّن؛ ولكل طلب اتقيّم: جه من أنهي تطبيق كباتن مدعوم، ورقم إصدار التطبيق ده، وهل الحكم أخضر ولا أصفر ولا أحمر، وأنهي نسخة من قواعد قراءة ربحي قرته؛ ولو طلب ماتقراش: نفس الحاجات من غير اللون. التطبيق اللي تضيفه بنفسك بيتسجّل «custom» بس، من غير اسمه. الأعداد دي بتوصل ومعاها معرّف لنسخة التطبيق، ومعرّف الإعلانات، ومعلومات عن الجهاز والتطبيق، والبلد اللي بيتعرف من عنوان الـIP. وعمرها ما فيها الأجرة ولا المسافات ولا العناوين ولا الأسماء ولا أي نص من الشاشة. مفيش حاجة بتتبعت قبل ما توافق في أول شاشة، وتقدر توقف الأعداد في أي وقت من «أدوات» ← «الخصوصية» ← «ابعت أعداد استخدام مجهولة». وجوجل بتمسح بيانات التحليلات المرتبطة بالمستخدم لوحدها بعد 14 شهر بالكتير.</li>
 </ul>
+<p><strong>تحديث قواعد القراءة.</strong> كام مرة في اليوم تطبيق الأندرويد بينزّل ملف صغير فيه قواعد القراءة من الموقع ده (GitHub Pages)، عشان لو شاشة الطلب في تطبيق كباتن اتغيّرت نصلّحها من غير نسخة جديدة من التطبيق. بيتنزّل الملف بس؛ وزي أي موقع، GitHub بيشوف الطلب وعنوان الـIP بتاعه. ونفس الملف ممكن يحدد أقدم نسخة من التطبيق لسه مسموح بيها، فالتطبيق يطلب منك تحدّثه.</p>
 <p>تطبيق الآيفون مفيهوش إعلانات ولا تحليلات، ومبيستخدمش الشبكة.</p>
 
 <h2>سجل التشخيص الاختياري</h2>
@@ -112,7 +115,8 @@
 <ul>
   <li><strong>خدمة إمكانية الوصول</strong> – لقراءة الطلب على الشاشة زي ما اتشرح. إنت اللي بتشغّلها بإيدك من إعدادات أندرويد بعد شرح جوه التطبيق، وتقدر توقفها في أي وقت.</li>
   <li><strong>العرض فوق التطبيقات (نافذة إمكانية الوصول)</strong> – لعرض كارت الحكم فوق تطبيق الكابتن. ربحي كابتن بيستخدم نوع نافذة إمكانية الوصول، فمش محتاج إذن «الظهور فوق التطبيقات» منفصل.</li>
-  <li><strong>الإنترنت وحالة الشبكة</strong> – لتحميل بانر الإعلانات وإرسال أعداد الاستخدام المذكورة فوق. اللي قارئ الرحلات بيقراه مبيتبعتش على الشبكة.</li>
+  <li><strong>الإنترنت وحالة الشبكة</strong> – لتحميل بانر الإعلانات وإرسال أعداد الاستخدام وتنزيل قواعد القراءة المذكورة فوق. اللي قارئ الرحلات بيقراه مبيتبعتش على الشبكة.</li>
+  <li><strong>الاهتزاز</strong> – بس للتنبيه الاختياري («أدوات» ← «التنبيهات») اللي بيعرّفك لون الطلب بالاهتزاز. والتنبيه بالصوت بيستخدم محرّك تحويل النص لكلام اللي على موبايلك.</li>
   <li><strong>معرّف الإعلانات</strong> – بتستخدمه مكتبات الإعلانات والتحليلات بتاعة جوجل زي ما اتشرح.</li>
 </ul>
 
