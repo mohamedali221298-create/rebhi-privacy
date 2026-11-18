@@ -1,0 +1,249 @@
+{
+ "version": 6,
+ "minVersionCode": 0,
+ "profiles": [
+  {
+   "id": "uber",
+   "name": "Uber",
+   "packages": [
+    "com.ubercab.driver"
+   ],
+   "defaultCommissionPercent": 0,
+   "triggers": [
+    "(?i)\\b(?:accept|confirm|match|select|aceitar|selecionar|aceptar|seleccionar|accepter|choisir|annehmen|akzeptieren|accetta|kabul)\\b|تأكيد|قبول|اقبل|أقبل|موافق|تطابق"
+   ],
+   "provisional": true,
+   "pickupRegex": "(?i)(?:على\\s*ب[\\u064B-\\u065F]*عد|away|de dist[aâ]ncia|de distancia|a distancia|uzakta)",
+   "tripRegex": "(?i)(?:مشوار|لمدة|لمسافة|\\btrip\\b|viagem|viaje|yolculuk)",
+   "regionLines": 1
+  },
+  {
+   "id": "indrive",
+   "name": "inDrive",
+   "packages": [
+    "sinet.startup.inDriver"
+   ],
+   "defaultCommissionPercent": 10,
+   "triggers": [
+    "(?i)\\b(?:accept|confirm|match|select|aceitar|selecionar|aceptar|seleccionar|accepter|choisir|annehmen|akzeptieren|accetta|kabul)\\b|تأكيد|قبول|اقبل|أقبل|موافق|تطابق"
+   ],
+   "provisional": true,
+   "fareRegex": "(?i)(?:مقابل|accept for|aceptar por|aceitar por)\\s*(?:[^\\d\\s]{1,4}\\s*)?(\\d[\\d.,]*)",
+   "pickupRegex": "~",
+   "regionLines": 1
+  },
+  {
+   "id": "didi",
+   "name": "DiDi",
+   "packages": [
+    "com.didiglobal.driver"
+   ],
+   "defaultCommissionPercent": 18,
+   "triggers": [
+    "(?i)\\b(?:accept|confirm|match|select|aceitar|selecionar|aceptar|seleccionar|accepter|choisir|annehmen|akzeptieren|accetta|kabul)\\b|تأكيد|قبول|اقبل|أقبل|موافق|تطابق"
+   ],
+   "provisional": true,
+   "fareRegex": "(?i)(?:قبول|accept|aceitar|aceptar)\\s*(?:[^\\d\\s]{1,4}\\s*)?(\\d[\\d.,]*)"
+  },
+  {
+   "id": "careem",
+   "name": "Careem",
+   "packages": [
+    "com.careem.adma"
+   ],
+   "defaultCommissionPercent": 25,
+   "triggers": [
+    "(?i)\\b(?:accept|reject)\\b|قبول|رفض"
+   ],
+   "provisional": true
+  },
+  {
+   "id": "talabat",
+   "name": "Talabat",
+   "packages": [
+    "com.logistics.rider.talabat"
+   ],
+   "category": "DELIVERY",
+   "defaultCommissionPercent": 0,
+   "loneLegIs": "PICKUP",
+   "triggers": [
+    "(?i)\\baccept\\b|قبول"
+   ],
+   "blockers": [
+    "(?i)\\boffline\\b"
+   ],
+   "provisional": true
+  },
+  {
+   "id": "mrsool",
+   "name": "Mrsool",
+   "packages": [
+    "com.mrsool.courier"
+   ],
+   "category": "DELIVERY",
+   "defaultCommissionPercent": 0,
+   "fareRegex": "(?i)(?:earn|ربح|أرباح|اربح|تربح)[^\\d\\n]{0,12}(\\d+(?:[.,]\\d+)?)",
+   "pickupRegex": "(?i)(?:pickup|استلام)",
+   "tripRegex": "(?i)(?:drop ?off|تسليم)",
+   "triggers": [
+    "(?i)\\baccept|قبول"
+   ],
+   "provisional": true,
+   "regionLines": 2
+  },
+  {
+   "id": "hungerstation",
+   "name": "HungerStation",
+   "packages": [
+    "com.logistics.rider.hungerstation"
+   ],
+   "category": "DELIVERY",
+   "defaultCommissionPercent": 0,
+   "loneLegIs": "PICKUP",
+   "triggers": [
+    "(?i)\\baccept\\b|قبول"
+   ],
+   "blockers": [
+    "(?i)\\boffline\\b"
+   ],
+   "provisional": true
+  },
+  {
+   "id": "keeta",
+   "name": "Keeta",
+   "packages": [
+    "com.sankuai.sailor.courier"
+   ],
+   "category": "DELIVERY",
+   "defaultCommissionPercent": 0,
+   "loneLegIs": "PICKUP",
+   "triggers": [
+    "(?i)\\baccept\\b|قبول"
+   ],
+   "provisional": true
+  }
+ ],
+ "checks": [
+  {
+   "profile": "uber",
+   "lines": [
+    "Uber X",
+    "EGP 120",
+    "4.90",
+    "2 mins (0.5 km) away",
+    "Nasr City",
+    "18 min (9.0 km) trip",
+    "New Cairo",
+    "Confirm"
+   ],
+   "fare": 120,
+   "tripKm": 9.0
+  },
+  {
+   "profile": "uber",
+   "lines": [
+    "UberX Saver",
+    "٤٠٫٥٠ ج.م.",
+    "4.68",
+    "صافي رسوم الخدمة",
+    "على بُعد 3 د (1.1 كلم)",
+    "المجاورة السابعة 1288, قسم أول 6 أكتوبر",
+    "مشوار لمدة 11 د (لمسافة 7.0 كلم)",
+    "قسم أول 6 أكتوبر",
+    "تطابق"
+   ],
+   "fare": 40.5,
+   "tripKm": 7.0
+  },
+  {
+   "profile": "uber",
+   "lines": [
+    "Uber X",
+    "£12",
+    "4.81",
+    "9 mins (1.6 km) away",
+    "SE6, London",
+    "1.6 km trip",
+    "SE6, London",
+    "Confirm"
+   ],
+   "fare": 12,
+   "tripKm": 1.6
+  },
+  {
+   "profile": "indrive",
+   "lines": [
+    "طلب ركوب",
+    "4 دقيقة",
+    "1,6 كم",
+    "45 دقيقة",
+    "38,2 كم",
+    "~1,6 كم",
+    "221 EGP",
+    "Reem",
+    "4.83",
+    "(342)",
+    "5 دقيقة",
+    "Current location (El Talbia)",
+    "Brain Electronic Services (New Cairo 1)",
+    "مريحة",
+    "InstaPay",
+    "القبول مقابل 221 EGP",
+    "اقترح أجرتك",
+    "266 EGP",
+    "244 EGP",
+    "233 EGP",
+    "إغلاق"
+   ],
+   "fare": 221,
+   "tripKm": 38.2
+  },
+  {
+   "profile": "didi",
+   "lines": [
+    "طلبات المشاوير المتاحة",
+    "اختر مشوارك",
+    "جديد",
+    "Flex",
+    "68.08 ج.م.",
+    "4.80",
+    "(5 د 1.3 كم) ١٢ لبيب البتانوني",
+    "(14 د 6.8 كم) City Language School",
+    "قبول 68.08 ج.م."
+   ],
+   "fare": 68.08,
+   "tripKm": 6.8
+  },
+  {
+   "profile": "talabat",
+   "lines": [
+    "Acceptance 89%",
+    "€4.70",
+    "Includes €3,70 extra",
+    "Pick up",
+    "1.6km-12min",
+    "Bernauer Str. 37, 10291 Berlin",
+    "Decline",
+    "Accept"
+   ],
+   "fare": 4.7
+  },
+  {
+   "profile": "mrsool",
+   "lines": [
+    "Pay ﷼ 290.50",
+    "5 items",
+    "Total 4.2 km",
+    "Pickup",
+    "Supermarket (2.6 km)",
+    "Drop off",
+    "Ayman (2.4 km)",
+    "Earn ﷼ 37.0",
+    "Including ﷼ 5.0 bonus",
+    "Accepting automatically in 40 sec"
+   ],
+   "fare": 37,
+   "tripKm": 2.4
+  }
+ ]
+}
